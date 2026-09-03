@@ -18,9 +18,9 @@ Set up so a non-technical person can edit the text visually through **CloudCanno
 | `challenge-reset.html` | "The Reset" challenge + a 28-day tracker (saves in the visitor's browser) |
 | `about.html` | "Heart 101" — cardiovascular basics |
 | `thanks.html` | Shown after a form is submitted |
-| `assets/styles.css` | **All colours, fonts, spacing** — the whole visual theme |
-| `assets/app.js` | Tracker + scroll animations |
-| `assets/uploads/` | Images added through the CMS land here |
+| `styles.css` | **All colours, fonts, spacing** — the whole visual theme |
+| `app.js` | Tracker + scroll animations |
+| `uploads/` | Images added through the CMS land here |
 | `cloudcannon.config.yml` | CloudCannon editor settings |
 
 Text elements that carry `class="editable"` are the bits the visual editor lets people change.
@@ -75,7 +75,7 @@ block in the code editor). Everything text-based, the editor can do alone.
 
 ## Fallback: publish free on Netlify (no visual editor)
 
-1. https://app.netlify.com/drop → drag this **folder** on (must include `assets/`).
+1. https://app.netlify.com/drop → drag this **folder** on (drag every file).
 2. Or, logged in: Site → **Deploys** → drag the folder to redeploy.
 3. Editing then means: change the `.html` files in a text editor, re-drag the folder.
 

@@ -5,7 +5,7 @@
 
 # Where images added through the editor get saved (inside the repo).
 paths:
-  uploads: assets/uploads
+  uploads: uploads
 
 collections_config:
   pages:
