@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Heart to Heart — cardiovascular health, minus the lecture</title>
+<meta name="description" content="Podcasts, 4-week challenges and straight facts on cardiovascular health, made for people under 30." />
+<meta property="og:title" content="Heart to Heart" />
+<meta property="og:description" content="Cardiovascular health, minus the lecture. Podcasts and 4-week challenges for people under 30." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+  // Netlify Identity: send invite/recovery links to the admin panel, and
+  // jump straight to the editor after logging in from there.
+  if (window.location.hash && window.location.hash.match(/invite_token|recovery_token|confirmation_token/)) {
+    window.location.href = "/admin/" + window.location.hash;
+  }
+</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</head>
+<body data-page="home">
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="dot">❤️</span> Heart to Heart</a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false">☰</button>
+    <nav class="nav-links">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="podcasts.html">Podcasts</a>
+      <a href="challenges.html">Challenges</a>
+      <a href="about.html">Heart 101</a>
+      <a class="btn btn-primary" href="challenges.html"><span>Start a challenge</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Cardio health for people under 30</span>
+        <h1 class="editable">Your heart's been trying to <span class="serif">text you back</span>.</h1>
+        <p class="lede editable" data-content="hero_subtext">A one-stop platform for cardiovascular health that doesn't sound like a doctor's waiting room — podcasts, 4-week challenges, and facts that actually fit around lectures and 2am panic.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="challenges.html">
+            <span>Start a 4-week challenge</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost btn-lg" href="podcasts.html"><span>Listen to an episode</span></a>
+        </div>
+        <div class="chips">
+          <span class="chip"><b>4 weeks</b> to one habit that sticks</span>
+          <span class="chip"><b>&lt;15 min</b> episodes</span>
+          <span class="chip"><b>$0</b> forever</span>
+          <span class="chip"><b>No login</b> — progress stays on your device</span>
+        </div>
+      </div>
+
+      <div data-reveal>
+        <div class="hero-card">
+          <div class="row">
+            <div class="bpm">72<small>bpm</small></div>
+            <div class="status">● resting · healthy</div>
+          </div>
+          <svg class="ecg" viewBox="0 0 320 70" preserveAspectRatio="none" aria-hidden="true">
+            <path class="base" d="M0 42 H44 l6 -4 l4 14 l5 -34 l5 44 l6 -22 l4 2 H150 l6 -4 l4 14 l5 -34 l5 44 l6 -22 l4 2 H320" />
+            <path class="pulse" d="M0 42 H44 l6 -4 l4 14 l5 -34 l5 44 l6 -22 l4 2 H150 l6 -4 l4 14 l5 -34 l5 44 l6 -22 l4 2 H320" />
+          </svg>
+          <div class="mini">
+            <div><strong>118/76</strong><span>blood pressure</span></div>
+            <div><strong>8,240</strong><span>steps today</span></div>
+            <div><strong>7h 40m</strong><span>sleep</span></div>
+            <div><strong>Day 12</strong><span>of The Reset</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>move daily</span><span>sleep 7–9 hrs</span><span>know your numbers</span><span>skip the vape</span><span>chill the stress</span><span>eat more plants</span><span>take the stairs</span>
+      <span>move daily</span><span>sleep 7–9 hrs</span><span>know your numbers</span><span>skip the vape</span><span>chill the stress</span><span>eat more plants</span><span>take the stairs</span>
+    </div>
+  </div>
+
+  <!-- ================= WHY NOW (bento) ================= -->
+  <section id="sec-why-now">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow" data-reveal>Why bother now</span>
+          <h2 class="editable" data-reveal>"I'm young, I'm fine"<br />is doing <span class="serif">a lot</span> of lifting</h2>
+        </div>
+        <p class="lede editable" data-reveal>Heart disease is a slow build, not a switch that flips at 50. The 2010s–2020s decade of your life is where the baseline gets set.</p>
+      </div>
+
+      <div class="bento">
+        <div class="card span-3" data-reveal>
+          <span class="tag">Fact check</span>
+          <h3 class="editable">Plaque starts early</h3>
+          <p class="editable">Fatty streaks in arteries can appear in the teens and twenties. What you're really doing now is choosing the slope of the line, not starting it later.</p>
+        </div>
+        <div class="card span-3" data-reveal>
+          <span class="tag">Silent</span>
+          <h3 class="editable">High blood pressure has no symptoms</h3>
+          <p class="editable">Most young adults with elevated blood pressure have no idea. A 60-second check — free on most campuses — tells you where you stand.</p>
+        </div>
+        <div class="card span-2" data-reveal>
+          <span class="stat-big" data-count="1" data-suffix=" in 4">0</span>
+          <p class="editable" style="margin-top:8px">young adults has raised blood pressure <span class="muted">(replace with a cited figure)</span></p>
+        </div>
+        <div class="card span-2" data-reveal>
+          <span class="stat-big" data-count="150" data-suffix=" min">0</span>
+          <p class="editable" style="margin-top:8px">of moderate activity a week is the target — ~20 a day</p>
+        </div>
+        <div class="card span-2" data-reveal>
+          <span class="stat-big" data-count="1" data-suffix="×">0</span>
+          <p class="editable" style="margin-top:8px">leading cause of death worldwide is cardiovascular disease</p>
+        </div>
+      </div>
+      <p class="muted editable" style="margin-top:20px;font-size:0.82rem">Sources: swap in citations from the WHO, AHA or your national heart foundation before publishing.</p>
+    </div>
+  </section>
+
+  <!-- ================= THE RESET (dark) ================= -->
+  <section id="sec-featured-challenge" class="panel--dark">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow" data-reveal>Featured challenge</span>
+          <h2 class="editable" data-reveal>The Reset — four weeks,<br />one <span class="serif">small thing</span> at a time</h2>
+          <p class="lede editable" data-reveal>No gym membership. No meal plan you'll ditch by Wednesday. Each week stacks one habit on the last, and a 28-day grid keeps you honest.</p>
+        </div>
+        <a class="btn btn-ghost" href="challenge-reset.html" data-reveal><span>See the full challenge</span></a>
+      </div>
+      <div class="weeks">
+        <div class="week" data-reveal><h3 class="editable">Move</h3><p class="editable">10 minutes of movement a day. Walk, dance, stairs — anything that nudges your heart rate up.</p></div>
+        <div class="week" data-reveal><h3 class="editable">Fuel</h3><p class="editable">Add one plant to every meal. Swap one sugary or energy drink a day for water.</p></div>
+        <div class="week" data-reveal><h3 class="editable">Recover</h3><p class="editable">Same sleep window 5 nights this week. Screens down 30 minutes before bed.</p></div>
+        <div class="week" data-reveal><h3 class="editable">Lock in</h3><p class="editable">Run all three together, plus one workout with a friend so it actually sticks.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PODCASTS ================= -->
+  <section id="sec-podcast-preview" class="panel--alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow" data-reveal>From the feed</span>
+          <h2 class="editable" data-reveal>Latest podcast drops</h2>
+        </div>
+        <a class="btn btn-ghost" href="podcasts.html" data-reveal><span>All episodes</span></a>
+      </div>
+      <div class="grid grid-2">
+        <div class="card" data-reveal>
+          <div class="pod">
+            <div class="pod-art a">🎧</div>
+            <div>
+              <h3 class="editable">Ep. 12 — Energy drinks vs. your heart rate</h3>
+              <div class="meta">11 MIN · NUTRITION</div>
+              <div class="links"><a href="podcasts.html">Spotify</a><a href="podcasts.html">Apple</a><a href="podcasts.html">YouTube</a></div>
+            </div>
+          </div>
+          <div class="waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="pod">
+            <div class="pod-art b">🎧</div>
+            <div>
+              <h3 class="editable">Ep. 11 — What a blood pressure number actually means</h3>
+              <div class="meta">9 MIN · BASICS</div>
+              <div class="links"><a href="podcasts.html">Spotify</a><a href="podcasts.html">Apple</a><a href="podcasts.html">YouTube</a></div>
+            </div>
+          </div>
+          <div class="waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section id="sec-how-it-works">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow" data-reveal>How it works</span>
+          <h2 class="editable" data-reveal>Three steps, no <span class="serif">homework</span></h2>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <div class="card" data-reveal>
+          <span class="card-num">01</span>
+          <h3 class="editable">Learn the basics</h3>
+          <p class="editable">Hit <a class="tlink" href="about.html">Heart 101</a> or an episode for a plain-language picture of what your heart's dealing with.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card-num">02</span>
+          <h3 class="editable">Pick a challenge</h3>
+          <p class="editable">Choose a 4-week challenge that fits your life right now. Start with The Reset if you're not sure.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card-num">03</span>
+          <h3 class="editable">Tick off 28 days</h3>
+          <p class="editable">Tap a day when you've done the habit. Progress saves in your browser — no account, nothing uploaded.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+  <section id="sec-newsletter" class="panel--alt">
+    <div class="wrap">
+      <div class="band" data-reveal>
+        <h2 class="editable">One heart-smart nudge a week</h2>
+        <p class="editable">A short email: one episode, one challenge check-in, one myth busted. No spam, unsubscribe anytime.</p>
+        <!-- Netlify: works as-is once deployed. Cloudflare/GitHub Pages: point action= at a free Formspree endpoint and drop data-netlify. -->
+        <form name="newsletter" method="POST" data-netlify="true" action="/thanks.html">
+          <input type="email" name="email" placeholder="you@uni.edu" required aria-label="Email address" />
+          <button class="btn" type="submit">Sign me up</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html" style="color:#fff"><span class="dot">❤️</span> Heart to Heart</a>
+      <p style="color:rgba(255,255,255,0.7);margin-top:16px;max-width:34ch">Cardiovascular health awareness for the group chat generation.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="podcasts.html">Podcasts</a>
+      <a href="challenges.html">Challenges</a>
+      <a href="about.html">Heart 101</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="#" data-social="instagram">Instagram</a>
+      <a href="#" data-social="tiktok">TikTok</a>
+      <a href="#" data-social="contact">Contact</a>
+    </div>
+    <div class="wordmark">Heart to Heart</div>
+    <p class="disclaimer">
+      Heart to Heart is an awareness and education project. It is not medical advice and is not a substitute for
+      care from a qualified health professional. If you have symptoms or concerns about your heart, talk to a doctor.
+      © <span data-year>2026</span> Heart to Heart.
+    </p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="content.js"></script>
+</body>
+</html>
