@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Podcasts — Heart to Heart</title>
+<meta name="description" content="Short cardiovascular health podcast episodes made for students and young adults." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="podcasts">
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="dot">❤️</span> Heart to Heart</a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Menu">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="podcasts.html" aria-current="page">Podcasts</a>
+      <a href="challenges.html">Challenges</a>
+      <a href="about.html">Heart 101</a>
+      <a class="btn btn-primary" href="challenges.html">Start a challenge</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:0">
+    <div class="wrap">
+      <span class="eyebrow">The podcast</span>
+      <h1 class="editable" data-content="hero_heading">Short episodes. Real heart facts.</h1>
+      <p class="lede editable" data-content="hero_subtext">Every episode is under 15 minutes — something to put on between lectures, on the walk home, or while you pretend to study.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div id="podcast-list" class="grid grid-2"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="band">
+        <h2 class="editable">Want to be on the show?</h2>
+        <p class="editable">Student, athlete, someone with a heart story, or a cardiologist who can keep it real? Pitch an episode.</p>
+        <form name="pitch" method="POST" data-netlify="true" action="/thanks.html">
+          <input type="email" name="email" placeholder="you@uni.edu" required />
+          <button class="btn" type="submit">Pitch an episode</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html" style="color:#fff"><span class="dot">❤️</span> Heart to Heart</a>
+      <p style="color:rgba(255,255,255,0.7);margin-top:14px;max-width:34ch">Cardiovascular health awareness for the group chat generation.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="podcasts.html">Podcasts</a>
+      <a href="challenges.html">Challenges</a>
+      <a href="about.html">Heart 101</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="#" data-social="instagram">Instagram</a>
+      <a href="#" data-social="tiktok">TikTok</a>
+      <a href="#" data-social="contact">Contact</a>
+    </div>
+    <div class="wordmark">Heart to Heart</div>
+
+    <p class="disclaimer">
+      Heart to Heart is an awareness and education project. It is not medical advice and is not a substitute for
+      care from a qualified health professional. If you have symptoms or concerns about your heart, talk to a doctor.
+      © <span data-year>2026</span> Heart to Heart.
+    </p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="content.js"></script>
+</body>
+</html>

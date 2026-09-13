@@ -1,0 +1,10 @@
+{
+  "challenges": [
+    { "title": "The Reset", "tag": "Beginner", "tag_color": "coral", "description": "The all-rounder. Week 1 move, week 2 fuel, week 3 recover, week 4 lock it in. Best place to start.", "cta_label": "Start", "cta_link": "challenge-reset.html", "cta_style": "primary" },
+    { "title": "Stair Season", "tag": "Movement", "tag_color": "grape", "description": "Take the stairs every time you have the option for 28 days. Free cardio hiding in every building on campus.", "cta_label": "Coming soon", "cta_link": "challenge-reset.html", "cta_style": "ghost" },
+    { "title": "Deep Sleep 28", "tag": "Recovery", "tag_color": "grape", "description": "Same sleep and wake window, 7 days a week. The most underrated thing you can do for your blood pressure.", "cta_label": "Coming soon", "cta_link": "challenge-reset.html", "cta_style": "ghost" },
+    { "title": "Caffeine Curfew", "tag": "Nutrition", "tag_color": "grape", "description": "No caffeine after 2pm for four weeks. Watch your resting heart rate and sleep quality change.", "cta_label": "Coming soon", "cta_link": "challenge-reset.html", "cta_style": "ghost" },
+    { "title": "8K Study Breaks", "tag": "Movement", "tag_color": "grape", "description": "Hit 8,000 steps a day by breaking study sessions with a lap outside. Focus goes up too.", "cta_label": "Coming soon", "cta_link": "challenge-reset.html", "cta_style": "ghost" },
+    { "title": "Nicotine-Free 28", "tag": "Habits", "tag_color": "grape", "description": "Four weeks off vapes and cigarettes, with daily check-ins and what to expect week by week.", "cta_label": "Coming soon", "cta_link": "challenge-reset.html", "cta_style": "ghost" }
+  ]
+}

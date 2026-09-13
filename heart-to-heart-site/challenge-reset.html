@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Reset — 4-week challenge — Heart to Heart</title>
+<meta name="description" content="A beginner-friendly 4-week cardiovascular health challenge. Track 28 days right in your browser." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="reset">
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="dot">❤️</span> Heart to Heart</a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Menu">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="podcasts.html">Podcasts</a>
+      <a href="challenges.html" aria-current="page">Challenges</a>
+      <a href="about.html">Heart 101</a>
+      <a class="btn btn-primary" href="#tracker">Jump to tracker</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:0">
+    <div class="wrap">
+      <span class="eyebrow">Challenge · Beginner · 28 days</span>
+      <h1 class="editable" data-content="hero_heading">The Reset</h1>
+      <p class="lede editable" data-content="hero_subtext">One habit a week, stacked. By day 28 you're doing all four without thinking about it. No equipment, no cost, no all-or-nothing energy — miss a day, tick the next one.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="weeks">
+        <div class="week">
+          <h3 class="editable">Move</h3>
+          <p class="editable">10 minutes of intentional movement every day. Brisk walk, dance in your room, cycle to class, take the stairs. Get slightly out of breath.</p>
+        </div>
+        <div class="week">
+          <h3 class="editable">Fuel</h3>
+          <p class="editable">Keep week 1 going. Add: one plant (fruit, veg, beans, nuts) to every meal, and swap one sugary or energy drink a day for water.</p>
+        </div>
+        <div class="week">
+          <h3 class="editable">Recover</h3>
+          <p class="editable">Keep weeks 1–2. Add: a consistent sleep window on at least 5 nights, and screens down 30 minutes before bed.</p>
+        </div>
+        <div class="week">
+          <h3 class="editable">Lock in</h3>
+          <p class="editable">All three together. Plus one session of movement with a friend — a walk, a gym trip, a kickabout. Social habits stick harder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tracker" style="padding-top:0">
+    <div class="wrap">
+      <span class="eyebrow">Your 28 days</span>
+      <h2 class="editable">Tick a day when you've done that week's habit</h2>
+      <p class="lede editable" style="margin-bottom:26px">Saved on this device only, in your browser. Clear your browser data and it resets. Nothing is uploaded anywhere.</p>
+
+      <div class="tracker" data-tracker="the-reset">
+        <div class="tracker-top">
+          <h3 class="editable" style="margin:0">Progress</h3>
+          <span style="color:var(--muted);font-size:0.9rem"><span data-stat="pct">0%</span> complete</span>
+        </div>
+        <div class="progress"><i></i></div>
+        <div class="stat-row">
+          <div><strong data-stat="done">0/28</strong><span>days done</span></div>
+          <div><strong data-stat="streak">0</strong><span>best streak</span></div>
+        </div>
+        <div class="days" aria-label="28 day tracker"></div>
+        <div class="tracker-actions">
+          <button class="link-btn" data-reset type="button">Reset progress</button>
+          <button class="link-btn" data-replay type="button" hidden>Replay the finish 🎉</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap faq">
+      <span class="eyebrow">Before you start</span>
+      <h2 class="editable">Quick questions</h2>
+      <details><summary class="editable">Do I need to be fit already?</summary><p class="editable">No. The whole point is a low floor. If 10 minutes of brisk walking is a lot right now, that's a perfect week 1.</p></details>
+      <details><summary class="editable">What if I miss a day?</summary><p class="editable">Nothing happens. Don't try to "make it up" — just tick the next day. Streaks are a bonus, not the goal.</p></details>
+      <details><summary class="editable">Is this safe for everyone?</summary><p class="editable">For most young adults, light-to-moderate movement and eating more plants is safe. If you have a diagnosed heart condition, are pregnant, or get chest pain, dizziness or unusual breathlessness with exercise, check with a doctor first.</p></details>
+      <details><summary class="editable">Where's my data stored?</summary><p class="editable">In your browser's local storage, on this device. We can't see it. There's no account and no server.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html" style="color:#fff"><span class="dot">❤️</span> Heart to Heart</a>
+      <p style="color:rgba(255,255,255,0.7);margin-top:14px;max-width:34ch">Cardiovascular health awareness for the group chat generation.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="podcasts.html">Podcasts</a>
+      <a href="challenges.html">Challenges</a>
+      <a href="about.html">Heart 101</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="#" data-social="instagram">Instagram</a>
+      <a href="#" data-social="tiktok">TikTok</a>
+      <a href="#" data-social="contact">Contact</a>
+    </div>
+    <div class="wordmark">Heart to Heart</div>
+
+    <p class="disclaimer">
+      Heart to Heart is an awareness and education project. It is not medical advice and is not a substitute for
+      care from a qualified health professional. Check with a doctor before making big changes to exercise, diet,
+      or nicotine use, especially if you have a known heart condition. © <span data-year>2026</span> Heart to Heart.
+    </p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="content.js"></script>
+</body>
+</html>
