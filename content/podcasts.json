@@ -1,0 +1,40 @@
+{
+  "episodes": [
+    {
+      "title": "Ep. 12 — Energy drinks vs. your heart rate",
+      "duration": "11 MIN",
+      "category": "NUTRITION",
+      "description": "What a 200mg caffeine hit actually does to your resting heart rate, and how to tell the difference between \"locked in\" and \"heart's racing.\"",
+      "youtube_url": "",
+      "spotify_url": "",
+      "apple_url": ""
+    },
+    {
+      "title": "Ep. 11 — What a blood pressure number actually means",
+      "duration": "9 MIN",
+      "category": "BASICS",
+      "description": "120/80, \"the top number\", \"the bottom number\" — decoded in plain language, plus where to get a free check on campus.",
+      "youtube_url": "",
+      "spotify_url": "",
+      "apple_url": ""
+    },
+    {
+      "title": "Ep. 10 — Vaping and your arteries: the short version",
+      "duration": "12 MIN",
+      "category": "HABITS",
+      "description": "Nicotine stiffens blood vessels within minutes. What the research says so far, and what quitting does in the first month.",
+      "youtube_url": "",
+      "spotify_url": "",
+      "apple_url": ""
+    },
+    {
+      "title": "Ep. 9 — Stress, cortisol and the 4am doom scroll",
+      "duration": "13 MIN",
+      "category": "MIND",
+      "description": "Chronic stress is a cardiovascular risk factor, not just a vibe. Three things that genuinely lower the load during exam season.",
+      "youtube_url": "",
+      "spotify_url": "",
+      "apple_url": ""
+    }
+  ]
+}

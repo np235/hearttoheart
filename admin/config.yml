@@ -1,0 +1,104 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where images uploaded through the editor (e.g. the logo) are stored.
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "content/settings.json"
+        label: "Site Settings"
+        name: "settings"
+        fields:
+          - { label: "Site name", name: "site_name", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Square image works best. Leave empty to keep the default heart icon." }
+          - { label: "Instagram URL", name: "instagram", widget: "string", required: false, hint: "e.g. https://instagram.com/yourpage" }
+          - { label: "TikTok URL", name: "tiktok", widget: "string", required: false, hint: "e.g. https://tiktok.com/@yourpage" }
+          - { label: "Contact email", name: "contact_email", widget: "string", required: false, hint: "Powers the footer 'Contact' link" }
+          - { label: "Analytics code (GoatCounter)", name: "analytics_code", widget: "string", required: false, hint: "From goatcounter.com — just the code, e.g. 'myproject' from myproject.goatcounter.com" }
+
+  - name: "pages"
+    label: "Page Headlines"
+    files:
+      - file: "content/pages/home.json"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { label: "Hero subtext", name: "hero_subtext", widget: "text" }
+      - file: "content/pages/about.json"
+        label: "Heart 101 Page"
+        name: "about"
+        fields:
+          - { label: "Hero heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero subtext", name: "hero_subtext", widget: "text" }
+      - file: "content/pages/podcasts.json"
+        label: "Podcasts Page"
+        name: "podcasts_page"
+        fields:
+          - { label: "Hero heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero subtext", name: "hero_subtext", widget: "text" }
+      - file: "content/pages/challenges.json"
+        label: "Challenges Page"
+        name: "challenges_page"
+        fields:
+          - { label: "Hero heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero subtext", name: "hero_subtext", widget: "text" }
+      - file: "content/pages/reset.json"
+        label: "The Reset Challenge"
+        name: "reset"
+        fields:
+          - { label: "Hero heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero subtext", name: "hero_subtext", widget: "text" }
+          - label: "The 4 weeks"
+            name: "weeks"
+            widget: "list"
+            min: 4
+            max: 4
+            summary: "{{title}}"
+            fields:
+              - { label: "Week title", name: "title", widget: "string" }
+              - { label: "Week description", name: "description", widget: "text" }
+
+  - name: "podcasts"
+    label: "Podcast Episodes"
+    files:
+      - file: "content/podcasts.json"
+        label: "Podcast Episodes"
+        name: "podcasts"
+        fields:
+          - label: "Episodes"
+            name: "episodes"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string", required: false, hint: "e.g. 11 MIN" }
+              - { label: "Category", name: "category", widget: "string", required: false, hint: "e.g. NUTRITION" }
+              - { label: "Description", name: "description", widget: "text", required: false, hint: "Shown only if there's no YouTube video." }
+              - { label: "YouTube URL", name: "youtube_url", widget: "string", required: false, hint: "Paste the full YouTube link — it embeds automatically as a video." }
+              - { label: "Spotify URL", name: "spotify_url", widget: "string", required: false }
+              - { label: "Apple Podcasts URL", name: "apple_url", widget: "string", required: false }
+
+  - name: "challenges"
+    label: "Challenges"
+    files:
+      - file: "content/challenges.json"
+        label: "Challenges"
+        name: "challenges"
+        fields:
+          - label: "Challenges"
+            name: "challenges"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string", required: false, hint: "e.g. Beginner, Movement, Recovery" }
+              - { label: "Tag colour", name: "tag_color", widget: "select", options: ["coral", "grape"], default: "grape" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Button label", name: "cta_label", widget: "string", default: "Start" }
+              - { label: "Button link", name: "cta_link", widget: "string", default: "challenge-reset.html" }
+              - { label: "Button style", name: "cta_style", widget: "select", options: ["primary", "ghost"], default: "ghost" }
