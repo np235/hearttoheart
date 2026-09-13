@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-page="challenges">
 
 <header class="nav">
   <div class="nav-inner">
@@ -31,58 +31,14 @@
   <section class="hero" style="padding-bottom:0">
     <div class="wrap">
       <span class="eyebrow">4-week challenges</span>
-      <h1 class="editable">Small enough to finish. Real enough to matter.</h1>
-      <p class="lede editable">Pick one. Four weeks, one habit, a grid of days you tick off. Your progress saves in your browser — no account, no login, nothing leaves your device.</p>
+      <h1 class="editable" data-content="hero_heading">Small enough to finish. Real enough to matter.</h1>
+      <p class="lede editable" data-content="hero_subtext">Pick one. Four weeks, one habit, a grid of days you tick off. Your progress saves in your browser — no account, no login, nothing leaves your device.</p>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <div class="grid grid-3">
-
-        <article class="card">
-          <span class="tag">Beginner</span>
-          <h3 class="editable">The Reset</h3>
-          <p class="editable">The all-rounder. Week 1 move, week 2 fuel, week 3 recover, week 4 lock it in. Best place to start.</p>
-          <p class="editable" style="margin-top:16px"><a class="btn btn-primary" href="challenge-reset.html">Start</a></p>
-        </article>
-
-        <article class="card">
-          <span class="tag grape">Movement</span>
-          <h3 class="editable">Stair Season</h3>
-          <p class="editable">Take the stairs every time you have the option for 28 days. Free cardio hiding in every building on campus.</p>
-          <p class="editable" style="margin-top:16px"><a class="btn btn-ghost" href="challenge-reset.html">Coming soon</a></p>
-        </article>
-
-        <article class="card">
-          <span class="tag grape">Recovery</span>
-          <h3 class="editable">Deep Sleep 28</h3>
-          <p class="editable">Same sleep and wake window, 7 days a week. The most underrated thing you can do for your blood pressure.</p>
-          <p class="editable" style="margin-top:16px"><a class="btn btn-ghost" href="challenge-reset.html">Coming soon</a></p>
-        </article>
-
-        <article class="card">
-          <span class="tag grape">Nutrition</span>
-          <h3 class="editable">Caffeine Curfew</h3>
-          <p class="editable">No caffeine after 2pm for four weeks. Watch your resting heart rate and sleep quality change.</p>
-          <p class="editable" style="margin-top:16px"><a class="btn btn-ghost" href="challenge-reset.html">Coming soon</a></p>
-        </article>
-
-        <article class="card">
-          <span class="tag grape">Movement</span>
-          <h3 class="editable">8K Study Breaks</h3>
-          <p class="editable">Hit 8,000 steps a day by breaking study sessions with a lap outside. Focus goes up too.</p>
-          <p class="editable" style="margin-top:16px"><a class="btn btn-ghost" href="challenge-reset.html">Coming soon</a></p>
-        </article>
-
-        <article class="card">
-          <span class="tag grape">Habits</span>
-          <h3 class="editable">Nicotine-Free 28</h3>
-          <p class="editable">Four weeks off vapes and cigarettes, with daily check-ins and what to expect week by week.</p>
-          <p class="editable" style="margin-top:16px"><a class="btn btn-ghost" href="challenge-reset.html">Coming soon</a></p>
-        </article>
-
-      </div>
+      <div id="challenge-list" class="grid grid-3"></div>
     </div>
   </section>
 
@@ -114,9 +70,9 @@
     </div>
     <div>
       <h4>Connect</h4>
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">Contact</a>
+      <a href="#" data-social="instagram">Instagram</a>
+      <a href="#" data-social="tiktok">TikTok</a>
+      <a href="#" data-social="contact">Contact</a>
     </div>
     <div class="wordmark">Heart to Heart</div>
 
@@ -129,5 +85,6 @@
 </footer>
 
 <script src="app.js"></script>
+<script src="content.js"></script>
 </body>
 </html>

@@ -12,8 +12,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<script>
+  // Netlify Identity: send invite/recovery links to the admin panel, and
+  // jump straight to the editor after logging in from there.
+  if (window.location.hash && window.location.hash.match(/invite_token|recovery_token|confirmation_token/)) {
+    window.location.href = "/admin/" + window.location.hash;
+  }
+</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </head>
-<body>
+<body data-page="home">
 
 <header class="nav">
   <div class="nav-inner">
@@ -36,7 +55,7 @@
       <div>
         <span class="eyebrow">Cardio health for people under 30</span>
         <h1 class="editable">Your heart's been trying to <span class="serif">text you back</span>.</h1>
-        <p class="lede editable">A one-stop platform for cardiovascular health that doesn't sound like a doctor's waiting room — podcasts, 4-week challenges, and facts that actually fit around lectures and 2am panic.</p>
+        <p class="lede editable" data-content="hero_subtext">A one-stop platform for cardiovascular health that doesn't sound like a doctor's waiting room — podcasts, 4-week challenges, and facts that actually fit around lectures and 2am panic.</p>
         <div class="hero-cta">
           <a class="btn btn-primary btn-lg" href="challenges.html">
             <span>Start a 4-week challenge</span>
@@ -236,9 +255,9 @@
     </div>
     <div>
       <h4>Connect</h4>
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">Contact</a>
+      <a href="#" data-social="instagram">Instagram</a>
+      <a href="#" data-social="tiktok">TikTok</a>
+      <a href="#" data-social="contact">Contact</a>
     </div>
     <div class="wordmark">Heart to Heart</div>
     <p class="disclaimer">
@@ -250,5 +269,6 @@
 </footer>
 
 <script src="app.js"></script>
+<script src="content.js"></script>
 </body>
 </html>

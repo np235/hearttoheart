@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-page="about">
 
 <header class="nav">
   <div class="nav-inner">
@@ -31,8 +31,8 @@
   <section class="hero" style="padding-bottom:0">
     <div class="wrap">
       <span class="eyebrow">Heart 101</span>
-      <h1 class="editable">The basics, without the scare tactics</h1>
-      <p class="lede editable">Cardiovascular disease is the world's leading cause of death — and a lot of the risk is built from everyday habits. Here's what's worth knowing before you're 30, and what's actually in your hands.</p>
+      <h1 class="editable" data-content="hero_heading">The basics, without the scare tactics</h1>
+      <p class="lede editable" data-content="hero_subtext">Cardiovascular disease is the world's leading cause of death — and a lot of the risk is built from everyday habits. Here's what's worth knowing before you're 30, and what's actually in your hands.</p>
     </div>
   </section>
 
@@ -138,9 +138,9 @@
     </div>
     <div>
       <h4>Connect</h4>
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">Contact</a>
+      <a href="#" data-social="instagram">Instagram</a>
+      <a href="#" data-social="tiktok">TikTok</a>
+      <a href="#" data-social="contact">Contact</a>
     </div>
     <div class="wordmark">Heart to Heart</div>
 
@@ -153,5 +153,6 @@
 </footer>
 
 <script src="app.js"></script>
+<script src="content.js"></script>
 </body>
 </html>
