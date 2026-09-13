@@ -31,6 +31,7 @@
   --radius: 26px;
   --radius-sm: 16px;
   --radius-xs: 11px;
+  --btn-radius: 999px;
   --maxw: 1180px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -151,7 +152,7 @@ section { padding: clamp(64px, 10vw, 128px) 0; position: relative; }
   align-items: center;
   gap: 10px;
   padding: 16px 28px;
-  border-radius: 999px;
+  border-radius: var(--btn-radius, 999px);
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1rem;

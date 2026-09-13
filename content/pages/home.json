@@ -1,3 +1,17 @@
 {
-  "hero_subtext": "A one-stop platform for cardiovascular health that doesn't sound like a doctor's waiting room — podcasts, 4-week challenges, and facts that actually fit around lectures and 2am panic."
+  "hero_subtext": "A one-stop platform for cardiovascular health that doesn't sound like a doctor's waiting room — podcasts, 4-week challenges, and facts that actually fit around lectures and 2am panic.",
+  "sections": {
+    "why_now": true,
+    "featured_challenge": true,
+    "podcast_preview": true,
+    "how_it_works": true,
+    "newsletter": true
+  },
+  "section_order": [
+    { "key": "why_now" },
+    { "key": "featured_challenge" },
+    { "key": "podcast_preview" },
+    { "key": "how_it_works" },
+    { "key": "newsletter" }
+  ]
 }

@@ -1,6 +1,7 @@
 {
   "hero_heading": "The Reset",
   "hero_subtext": "One habit a week, stacked. By day 28 you're doing all four without thinking about it. No equipment, no cost, no all-or-nothing energy — miss a day, tick the next one.",
+  "show_faq": true,
   "weeks": [
     { "title": "Move", "description": "10 minutes of intentional movement every day. Brisk walk, dance in your room, cycle to class, take the stairs. Get slightly out of breath." },
     { "title": "Fuel", "description": "Keep week 1 going. Add: one plant (fruit, veg, beans, nuts) to every meal, and swap one sugary or energy drink a day for water." },

@@ -1,36 +1,67 @@
 # Heart to Heart
 
 Free, static website for cardiovascular health awareness aimed at youth / Gen Z / uni students.
-Plain HTML + CSS + a little vanilla JS. **No build step, no framework.**
+Plain HTML + CSS + vanilla JS. **No build step, no framework, no Node.js required.**
 
-Set up so a non-technical person can edit the text visually through **CloudCannon**
-(or, as a free alternative, Decap CMS — see the end).
+A non-technical editor can manage the logo, social links, podcast episodes (including
+YouTube embeds), challenges, and The Reset's weekly text through **Decap CMS**, a free
+form-based editor at `/admin`. A free **GoatCounter** link shows visitor stats.
 
 ---
 
+## How it works
+
+The pages are ordinary HTML/CSS. A small script, `content.js`, runs in the visitor's
+browser, fetches a few JSON files from `content/`, and fills in the page — the logo,
+social links, podcast cards, challenge cards, and a handful of headlines. Decap CMS
+(at `/admin`) is just a form that edits those JSON files and commits the change to
+GitHub. Netlify picks up the commit and republishes — no build step anywhere.
+
 ## Files
 
-| File | What it is |
+| Path | What it is |
 |---|---|
-| `index.html` | Landing page |
-| `podcasts.html` | Podcast episodes — paste real Spotify / Apple / YouTube embeds into the dashed boxes |
-| `challenges.html` | Directory of 4-week challenges |
-| `challenge-reset.html` | "The Reset" challenge + a 28-day tracker (saves in the visitor's browser) |
-| `about.html` | "Heart 101" — cardiovascular basics |
-| `thanks.html` | Shown after a form is submitted |
-| `styles.css` | **All colours, fonts, spacing** — the whole visual theme |
-| `app.js` | Tracker + scroll animations |
-| `uploads/` | Images added through the CMS land here |
-| `cloudcannon.config.yml` | CloudCannon editor settings |
+| `index.html`, `about.html`, `challenges.html`, `challenge-reset.html`, `podcasts.html`, `thanks.html` | The 6 pages |
+| `styles.css` | All colours, fonts, spacing, animations |
+| `app.js` | Mobile nav, scroll reveals, the 28-day tracker + Perfect-28 celebration |
+| `content.js` | Reads `content/*.json` and fills in the page at load time |
+| `content/settings.json` | Logo, Instagram, TikTok, contact email, analytics code |
+| `content/pages/*.json` | Hero heading/subtext for each page, and The Reset's 4 weeks |
+| `content/podcasts.json` | The podcast episode list |
+| `content/challenges.json` | The challenge card list |
+| `uploads/` | Images uploaded through the CMS (e.g. the logo) land here |
+| `admin/index.html`, `admin/config.yml` | The Decap CMS editor and its field definitions |
 
-Text elements that carry `class="editable"` are the bits the visual editor lets people change.
-Everything else (layout, colours, forms, the tracker) stays locked.
+## What's editable through Decap, and what isn't
+
+**Editable (friend can do this alone, no code):**
+- Logo, Instagram/TikTok links, contact email, analytics code
+- **Theme** — 5 curated colour + font presets (Site Settings → Theme)
+- **Shape** — pill / soft / sharp corners, applied to every button and card
+- Podcast episodes — add/edit/remove, including a YouTube link that auto-embeds
+- Challenges — add/edit/remove
+- The Reset's 4 week titles/descriptions
+- Each page's big headline/subtext (Home's subtext only; Home's exact styled
+  headline is left as-is to protect its custom typography)
+- **Home page section visibility** — turn Why Now / Featured Challenge / Podcast
+  Preview / How It Works / Newsletter on or off
+- **Home page section order** — drag to reorder those same 5 sections (hero and
+  the scrolling ticker always stay fixed at the top)
+- **Bottom CTA band** — show/hide on About, Podcasts, and Challenges
+- **FAQ section** — show/hide on About and The Reset
+
+Themes and shapes are a fixed menu of presets (5 themes × 3 shapes = 15 combinations),
+not arbitrary design freedom — see `content.js`'s `THEMES`/`SHAPES` objects to add more
+presets later.
+
+**Not wired up yet (still hand-edit the HTML, or ask a developer):**
+About page's fact/myth card *contents* and FAQ *contents* (only show/hide, not their
+text), the footer, the medical disclaimer, truly custom layouts beyond reordering
+existing sections.
 
 ---
 
 ## Preview locally
-
-Open `index.html` in a browser, or for clean paths:
 
 ```bash
 cd heart-to-heart
@@ -40,58 +71,21 @@ python3 -m http.server 8080
 
 ---
 
-## Publish + set up visual editing (CloudCannon)
+## Publish + set up the editor
 
-**One-time, done by someone comfortable clicking through a setup wizard:**
+See **`SETUP-GUIDE.md`** for the full step-by-step (GitHub, Netlify, enabling the
+CMS login, inviting your friend, and setting up free visitor analytics).
 
-1. **GitHub** — create a free account at https://github.com, make a new repository
-   (e.g. `heart-to-heart`), and upload the contents of this folder
-   (drag the files onto the repo page → "Commit changes").
+Quick version:
+1. Push this folder to a GitHub repo (flat files, no missing subfolders).
+2. Netlify → **Add new site → Import from GitHub** → build command empty, publish
+   directory `.`
+3. Netlify → **Identity** → Enable, set registration to **Invite only** → **Services →
+   Git Gateway** → Enable.
+4. Netlify → **Identity → Invite users** → your friend's email.
+5. Friend logs in at `yoursite.com/admin`.
 
-2. **CloudCannon** — sign up at https://cloudcannon.com → **Create Site** →
-   **Connect a Git repository** → pick the repo.
-   - Framework / SSG: **None** (plain HTML)
-   - Build command: *(leave blank)*
-   - Output path: `/`
-
-3. CloudCannon builds a preview and can **host the site itself** (a `*.cloudcannon.com`
-   URL, or connect a custom domain). You can retire the Netlify version once this works.
-
-4. **Invite the editor** — Site → **Settings → Collaborators** → add your friend's email,
-   role **Editor**. They get an email, set a password, and never touch GitHub.
-
-**Editing, from then on (the editor's whole workflow):**
-
-1. Log in at https://app.cloudcannon.com
-2. Open the site → pick a page → the visual editor shows the real page
-3. Click any headline or paragraph → type. Use the toolbar for bold / links.
-4. Swap an image: click it → Upload
-5. Click **Save** → the site rebuilds and is live in ~1 minute
-
-Adding a whole new podcast card or page still needs a developer (duplicate an existing
-block in the code editor). Everything text-based, the editor can do alone.
-
----
-
-## Fallback: publish free on Netlify (no visual editor)
-
-1. https://app.netlify.com/drop → drag this **folder** on (drag every file).
-2. Or, logged in: Site → **Deploys** → drag the folder to redeploy.
-3. Editing then means: change the `.html` files in a text editor, re-drag the folder.
-
-Forms: the `<form>` tags have `data-netlify="true"` and work on Netlify as-is.
-On CloudCannon hosting or GitHub Pages, point each form's `action` at a free
-[Formspree](https://formspree.io) endpoint and remove `data-netlify="true"`.
-
----
-
-## Free alternative to CloudCannon: Decap CMS
-
-If CloudCannon's paid tier isn't worth it, the site can be converted to use
-[Decap CMS](https://decapcms.org) (100% free): content moves into simple files, a
-build step renders them, and the editor gets a form-based admin panel at `/admin`.
-Bigger one-time change, same "editor never sees code" result. The `class="editable"`
-groundwork already done here carries over.
+Forms: the `<form>` tags already have `data-netlify="true"` and work on Netlify as-is.
 
 ---
 
@@ -101,5 +95,5 @@ groundwork already done here carries over.
       (WHO, AHA, British Heart Foundation, or your national heart foundation).
 - [ ] Have a health professional review `about.html`.
 - [ ] Keep the medical disclaimer in the footer on every page.
-- [ ] Real social links (currently `#`) and a real contact email.
-- [ ] Add a short privacy note if you collect emails.
+- [ ] Set the real logo, Instagram, TikTok and contact email via `/admin`.
+- [ ] Sign up for GoatCounter and put the code in `/admin` → Site Settings.

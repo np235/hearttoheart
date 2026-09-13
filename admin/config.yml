@@ -20,39 +20,85 @@ collections:
           - { label: "TikTok URL", name: "tiktok", widget: "string", required: false, hint: "e.g. https://tiktok.com/@yourpage" }
           - { label: "Contact email", name: "contact_email", widget: "string", required: false, hint: "Powers the footer 'Contact' link" }
           - { label: "Analytics code (GoatCounter)", name: "analytics_code", widget: "string", required: false, hint: "From goatcounter.com — just the code, e.g. 'myproject' from myproject.goatcounter.com" }
+          - label: "Theme"
+            name: "theme"
+            widget: "select"
+            default: "coral_pulse"
+            options:
+              - { label: "Coral Pulse (default) — coral & violet", value: "coral_pulse" }
+              - { label: "Mint Fresh — teal & sky blue", value: "mint_fresh" }
+              - { label: "Sunset — orange & rose", value: "sunset" }
+              - { label: "Midnight — indigo & purple", value: "midnight" }
+              - { label: "Clean & Minimal — greyscale, no fancy font", value: "minimal" }
+          - label: "Button & card shape"
+            name: "shape"
+            widget: "select"
+            default: "pill"
+            options:
+              - { label: "Pill (default) — fully rounded", value: "pill" }
+              - { label: "Soft — gently rounded corners", value: "soft" }
+              - { label: "Sharp — square-ish corners", value: "sharp" }
 
   - name: "pages"
-    label: "Page Headlines"
+    label: "Page Layout & Headlines"
     files:
       - file: "content/pages/home.json"
         label: "Home Page"
         name: "home"
         fields:
           - { label: "Hero subtext", name: "hero_subtext", widget: "text" }
+          - label: "Show these sections?"
+            name: "sections"
+            widget: "object"
+            fields:
+              - { label: "\"Why bother now\" facts", name: "why_now", widget: "boolean", default: true }
+              - { label: "Featured challenge (The Reset)", name: "featured_challenge", widget: "boolean", default: true }
+              - { label: "Latest podcasts preview", name: "podcast_preview", widget: "boolean", default: true }
+              - { label: "How it works", name: "how_it_works", widget: "boolean", default: true }
+              - { label: "Newsletter sign-up", name: "newsletter", widget: "boolean", default: true }
+          - label: "Section order"
+            name: "section_order"
+            widget: "list"
+            hint: "Drag to reorder. The hero and the scrolling ticker always stay at the top."
+            field:
+              label: "Section"
+              name: "key"
+              widget: "select"
+              options:
+                - { label: "\"Why bother now\" facts", value: "why_now" }
+                - { label: "Featured challenge (The Reset)", value: "featured_challenge" }
+                - { label: "Latest podcasts preview", value: "podcast_preview" }
+                - { label: "How it works", value: "how_it_works" }
+                - { label: "Newsletter sign-up", value: "newsletter" }
       - file: "content/pages/about.json"
         label: "Heart 101 Page"
         name: "about"
         fields:
           - { label: "Hero heading", name: "hero_heading", widget: "string" }
           - { label: "Hero subtext", name: "hero_subtext", widget: "text" }
+          - { label: "Show the \"Myth check\" FAQ section?", name: "show_faq", widget: "boolean", default: true }
+          - { label: "Show the bottom call-to-action band?", name: "show_band", widget: "boolean", default: true }
       - file: "content/pages/podcasts.json"
         label: "Podcasts Page"
         name: "podcasts_page"
         fields:
           - { label: "Hero heading", name: "hero_heading", widget: "string" }
           - { label: "Hero subtext", name: "hero_subtext", widget: "text" }
+          - { label: "Show the bottom call-to-action band?", name: "show_band", widget: "boolean", default: true }
       - file: "content/pages/challenges.json"
         label: "Challenges Page"
         name: "challenges_page"
         fields:
           - { label: "Hero heading", name: "hero_heading", widget: "string" }
           - { label: "Hero subtext", name: "hero_subtext", widget: "text" }
+          - { label: "Show the bottom call-to-action band?", name: "show_band", widget: "boolean", default: true }
       - file: "content/pages/reset.json"
         label: "The Reset Challenge"
         name: "reset"
         fields:
           - { label: "Hero heading", name: "hero_heading", widget: "string" }
           - { label: "Hero subtext", name: "hero_subtext", widget: "text" }
+          - { label: "Show the FAQ section?", name: "show_faq", widget: "boolean", default: true }
           - label: "The 4 weeks"
             name: "weeks"
             widget: "list"

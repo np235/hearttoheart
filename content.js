@@ -38,10 +38,55 @@
     return a;
   }
 
+  /* ---------- theme + shape presets ---------- */
+  const THEMES = {
+    coral_pulse: { coral: "#ff3b5c", coralDeep: "#e11d48", violet: "#7b5cff", mint: "#4fe0b0", gold: "#ffd84d",
+      fontDisplay: '"Bricolage Grotesque","Inter",system-ui,sans-serif', fontSerif: '"Instrument Serif",Georgia,serif' },
+    mint_fresh: { coral: "#14b8a6", coralDeep: "#0d9488", violet: "#38bdf8", mint: "#86efac", gold: "#fde68a",
+      fontDisplay: '"Bricolage Grotesque","Inter",system-ui,sans-serif', fontSerif: '"Instrument Serif",Georgia,serif' },
+    sunset: { coral: "#ff7849", coralDeep: "#ea580c", violet: "#f43f5e", mint: "#fbbf24", gold: "#fde047",
+      fontDisplay: '"Bricolage Grotesque","Inter",system-ui,sans-serif', fontSerif: '"Instrument Serif",Georgia,serif' },
+    midnight: { coral: "#6366f1", coralDeep: "#4338ca", violet: "#a855f7", mint: "#22d3ee", gold: "#facc15",
+      fontDisplay: '"Bricolage Grotesque","Inter",system-ui,sans-serif', fontSerif: '"Instrument Serif",Georgia,serif' },
+    minimal: { coral: "#475569", coralDeep: "#1e293b", violet: "#64748b", mint: "#94a3b8", gold: "#cbd5e1",
+      fontDisplay: '"Inter",system-ui,sans-serif', fontSerif: '"Inter",system-ui,sans-serif' },
+  };
+  const SHAPES = {
+    pill: { radius: "26px", radiusSm: "16px", radiusXs: "11px", btnRadius: "999px" },
+    soft: { radius: "16px", radiusSm: "12px", radiusXs: "8px", btnRadius: "14px" },
+    sharp: { radius: "6px", radiusSm: "6px", radiusXs: "4px", btnRadius: "6px" },
+  };
+
+  function applyTheme(key) {
+    const t = THEMES[key];
+    if (!t) return;
+    const r = document.documentElement.style;
+    r.setProperty("--coral", t.coral);
+    r.setProperty("--coral-deep", t.coralDeep);
+    r.setProperty("--violet", t.violet);
+    r.setProperty("--mint", t.mint);
+    r.setProperty("--gold", t.gold);
+    r.setProperty("--font-display", t.fontDisplay);
+    r.setProperty("--font-serif", t.fontSerif);
+  }
+
+  function applyShape(key) {
+    const s = SHAPES[key];
+    if (!s) return;
+    const r = document.documentElement.style;
+    r.setProperty("--radius", s.radius);
+    r.setProperty("--radius-sm", s.radiusSm);
+    r.setProperty("--radius-xs", s.radiusXs);
+    r.setProperty("--btn-radius", s.btnRadius);
+  }
+
   /* ---------- site-wide settings: logo, socials, analytics ---------- */
   async function applySettings() {
     const s = await getJSON("content/settings.json");
     if (!s) return;
+
+    applyTheme(s.theme || "coral_pulse");
+    applyShape(s.shape || "pill");
 
     if (s.site_name) {
       $all(".brand").forEach((el) => {
@@ -97,6 +142,30 @@
         const p = el.querySelector("p");
         if (h3 && w.title) h3.textContent = w.title;
         if (p && w.description) p.textContent = w.description;
+      });
+    }
+
+    // simple single-section toggles (About's FAQ/band, Podcasts' band, Challenges' band)
+    if (data.show_band === false) document.getElementById("sec-band")?.remove();
+    if (data.show_faq === false) document.getElementById("sec-faq")?.remove();
+
+    // home page: per-section show/hide
+    if (data.sections && typeof data.sections === "object") {
+      Object.entries(data.sections).forEach(([key, visible]) => {
+        if (visible === false) {
+          const id = "sec-" + key.replace(/_/g, "-");
+          document.getElementById(id)?.remove();
+        }
+      });
+    }
+
+    // home page: section order (drag list of {key: "..."})
+    if (Array.isArray(data.section_order)) {
+      data.section_order.forEach((item) => {
+        const key = item && item.key;
+        if (!key) return;
+        const el = document.getElementById("sec-" + key.replace(/_/g, "-"));
+        if (el && el.parentNode) el.parentNode.appendChild(el);
       });
     }
   }
